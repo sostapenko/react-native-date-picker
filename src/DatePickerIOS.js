@@ -1,9 +1,10 @@
 import React from 'react'
-import { StyleSheet, requireNativeComponent, NativeModules, Platform } from 'react-native'
+import { StyleSheet, NativeModules, Platform } from 'react-native'
+import RNDateTimePicker from '@react-native-community/datetimepicker'
 import { shouldCloseModal, shouldOpenModal } from './modal'
 
 const RCTDatePickerIOS =
-  Platform.OS === 'ios' ? requireNativeComponent('RNDatePicker') : null
+  Platform.OS === 'ios' ? RNDateTimePicker : null
 
 export default class DatePickerIOS extends React.Component {
   _picker = null
